@@ -1,0 +1,15 @@
+/* Append to ui/style.qss for the session-row × delete button */
+
+QPushButton[sessionDelete="true"] {
+    background-color: transparent;
+    color: #8b8b93;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+}
+QPushButton[sessionDelete="true"]:hover {
+    background-color: rgba(239, 68, 68, 0.18);
+    color: #ef4444;
+}

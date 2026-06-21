@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChatPage</class>
+ <widget class="QWidget" name="ChatPage">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1216</width><height>800</height></rect>
+  </property>
+  <layout class="QVBoxLayout" name="chatRoot">
+   <property name="leftMargin"><number>24</number></property>
+   <property name="topMargin"><number>20</number></property>
+   <property name="rightMargin"><number>24</number></property>
+   <property name="bottomMargin"><number>20</number></property>
+   <property name="spacing"><number>16</number></property>
+
+   <item>
+    <widget class="QStackedWidget" name="obj_chatstack">
+     <property name="currentIndex"><number>0</number></property>
+
+     <!-- ============ WELCOME PAGE ============ -->
+     <widget class="QWidget" name="welcomePage">
+      <layout class="QVBoxLayout" name="welcomePageLayout">
+       <property name="leftMargin"><number>0</number></property>
+       <property name="topMargin"><number>0</number></property>
+       <property name="rightMargin"><number>0</number></property>
+       <property name="bottomMargin"><number>0</number></property>
+       <property name="spacing"><number>0</number></property>
+
+       <!-- top breathing room -->
+       <item>
+        <spacer name="welcomeTopSpacer">
+         <property name="orientation"><enum>Qt::Vertical</enum></property>
+         <property name="sizeType"><enum>QSizePolicy::Fixed</enum></property>
+         <property name="sizeHint" stdset="0"><size><width>20</width><height>80</height></size></property>
+        </spacer>
+       </item>
+
+       <!-- center column -->
+       <item>
+        <layout class="QHBoxLayout" name="welcomeCenterRow">
+         <item>
+          <spacer name="welcomeLeftSpacer">
+           <property name="orientation"><enum>Qt::Horizontal</enum></property>
+           <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QWidget" name="welcomeColumn">
+           <property name="minimumSize"><size><width>720</width><height>0</height></size></property>
+           <property name="maximumSize"><size><width>880</width><height>16777215</height></size></property>
+           <layout class="QVBoxLayout" name="welcomeColumnLayout">
+            <property name="leftMargin"><number>0</number></property>
+            <property name="topMargin"><number>0</number></property>
+            <property name="rightMargin"><number>0</number></property>
+            <property name="bottomMargin"><number>0</number></property>
+            <property name="spacing"><number>24</number></property>
+
+            <item>
+             <widget class="QLabel" name="lblWelcomeLogo">
+              <property name="text"><string>L</string></property>
+              <property name="alignment"><set>Qt::AlignCenter</set></property>
+              <property name="minimumSize"><size><width>96</width><height>96</height></size></property>
+              <property name="maximumSize"><size><width>96</width><height>96</height></size></property>
+             </widget>
+            </item>
+
+            <item>
+             <widget class="QLabel" name="lbl_welcomegreeting">
+              <property name="text"><string>Good evening</string></property>
+              <property name="alignment"><set>Qt::AlignCenter</set></property>
+             </widget>
+            </item>
+
+            <item>
+             <widget class="QLabel" name="lblWelcomeSubtitle">
+              <property name="text"><string>What can I help you with?</string></property>
+              <property name="alignment"><set>Qt::AlignCenter</set></property>
+             </widget>
+            </item>
+
+            <item>
+             <spacer name="welcomeMidSpacer">
+              <property name="orientation"><enum>Qt::Vertical</enum></property>
+              <property name="sizeType"><enum>QSizePolicy::Fixed</enum></property>
+              <property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property>
+             </spacer>
+            </item>
+
+            <item>
+             <widget class="QFrame" name="welcomeInputBar">
+              <layout class="QHBoxLayout" name="welcomeInputBarLayout">
+               <property name="leftMargin"><number>14</number></property>
+               <property name="topMargin"><number>12</number></property>
+               <property name="rightMargin"><number>14</number></property>
+               <property name="bottomMargin"><number>12</number></property>
+               <property name="spacing"><number>10</number></property>
+               <item>
+                <widget class="QPushButton" name="btn_attachwelcome">
+                 <property name="text"><string>📎</string></property>
+                 <property name="toolTip"><string>Attach a document for RAG</string></property>
+                 <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+                 <property name="minimumSize"><size><width>44</width><height>44</height></size></property>
+                 <property name="maximumSize"><size><width>44</width><height>44</height></size></property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="obj_promptinputwelcome">
+                 <property name="placeholderText"><string>Ask anything…</string></property>
+                 <property name="minimumHeight"><number>44</number></property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btn_sendwelcome">
+                 <property name="text"><string>Send</string></property>
+                 <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+                 <property name="minimumSize"><size><width>80</width><height>44</height></size></property>
+                 <property name="property" stdset="0"><string notr="true">primary</string></property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+
+            <item>
+             <layout class="QHBoxLayout" name="welcomeCardsRow">
+              <property name="spacing"><number>14</number></property>
+              <item>
+               <widget class="QPushButton" name="btn_suggestion1">
+                <property name="text"><string>🌐  Summarize a webpage
+Summarize en.wikipedia.org/wiki/Cybersecurity</string></property>
+                <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+                <property name="minimumHeight"><number>120</number></property>
+                <property name="property" stdset="0"><string notr="true">suggestionCard</string></property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_suggestion2">
+                <property name="text"><string>💡  Explain it simply
+Explain public-key cryptography to a 12-year-old</string></property>
+                <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+                <property name="minimumHeight"><number>120</number></property>
+                <property name="property" stdset="0"><string notr="true">suggestionCard</string></property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_suggestion3">
+                <property name="text"><string>🪶  Get creative
+Write me a short poem about late-night coding</string></property>
+                <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+                <property name="minimumHeight"><number>120</number></property>
+                <property name="property" stdset="0"><string notr="true">suggestionCard</string></property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="welcomeRightSpacer">
+           <property name="orientation"><enum>Qt::Horizontal</enum></property>
+           <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+
+       <!-- bottom spacer that takes remaining space -->
+       <item>
+        <spacer name="welcomeBottomSpacer">
+         <property name="orientation"><enum>Qt::Vertical</enum></property>
+         <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+
+     <!-- ============ MESSAGES PAGE ============ -->
+     <widget class="QWidget" name="messagesPage">
+      <layout class="QVBoxLayout" name="messagesPageLayout">
+       <property name="leftMargin"><number>0</number></property>
+       <property name="topMargin"><number>0</number></property>
+       <property name="rightMargin"><number>0</number></property>
+       <property name="bottomMargin"><number>0</number></property>
+       <property name="spacing"><number>16</number></property>
+
+       <item>
+        <widget class="QLabel" name="lbl_messagessessiontitle">
+         <property name="text"><string>Session</string></property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QScrollArea" name="obj_chatscrl">
+         <property name="widgetResizable"><bool>true</bool></property>
+         <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+         <property name="horizontalScrollBarPolicy"><enum>Qt::ScrollBarAlwaysOff</enum></property>
+         <widget class="QWidget" name="chatScrollContents">
+          <property name="geometry"><rect><x>0</x><y>0</y><width>1166</width><height>600</height></rect></property>
+          <layout class="QVBoxLayout" name="obj_chatlayout">
+           <property name="leftMargin"><number>16</number></property>
+           <property name="topMargin"><number>16</number></property>
+           <property name="rightMargin"><number>16</number></property>
+           <property name="bottomMargin"><number>16</number></property>
+           <property name="spacing"><number>8</number></property>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QFrame" name="inputBar">
+         <layout class="QHBoxLayout" name="inputBarLayout">
+          <property name="leftMargin"><number>12</number></property>
+          <property name="topMargin"><number>10</number></property>
+          <property name="rightMargin"><number>12</number></property>
+          <property name="bottomMargin"><number>10</number></property>
+          <property name="spacing"><number>10</number></property>
+          <item>
+           <widget class="QPushButton" name="btn_attach">
+            <property name="text"><string>📎</string></property>
+            <property name="toolTip"><string>Attach a document for RAG</string></property>
+            <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+            <property name="minimumSize"><size><width>40</width><height>40</height></size></property>
+            <property name="maximumSize"><size><width>40</width><height>40</height></size></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="obj_promptinputchat">
+            <property name="placeholderText"><string>Type your message…</string></property>
+            <property name="minimumHeight"><number>40</number></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_send">
+            <property name="text"><string>Send</string></property>
+            <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+            <property name="minimumSize"><size><width>72</width><height>40</height></size></property>
+            <property name="property" stdset="0"><string notr="true">primary</string></property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

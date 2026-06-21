@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1280</width><height>800</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>LLME</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="rootLayout">
+    <property name="leftMargin"><number>0</number></property>
+    <property name="topMargin"><number>0</number></property>
+    <property name="rightMargin"><number>0</number></property>
+    <property name="bottomMargin"><number>0</number></property>
+    <property name="spacing"><number>0</number></property>
+
+    <!-- Icon rail -->
+    <item>
+     <widget class="QFrame" name="sidebar">
+      <property name="minimumSize"><size><width>64</width><height>0</height></size></property>
+      <property name="maximumSize"><size><width>64</width><height>16777215</height></size></property>
+      <layout class="QVBoxLayout" name="sidebarLayout">
+       <property name="leftMargin"><number>8</number></property>
+       <property name="topMargin"><number>16</number></property>
+       <property name="rightMargin"><number>8</number></property>
+       <property name="bottomMargin"><number>16</number></property>
+       <property name="spacing"><number>8</number></property>
+       <item>
+        <widget class="QLabel" name="sidebarLogo">
+         <property name="text"><string>L</string></property>
+         <property name="alignment"><set>Qt::AlignCenter</set></property>
+         <property name="minimumHeight"><number>40</number></property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="sidebarTopSpacer">
+         <property name="orientation"><enum>Qt::Vertical</enum></property>
+         <property name="sizeType"><enum>QSizePolicy::Fixed</enum></property>
+         <property name="sizeHint" stdset="0"><size><width>20</width><height>16</height></size></property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_navchat">
+         <property name="text"><string>💬</string></property>
+         <property name="toolTip"><string>New chat / welcome</string></property>
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+         <property name="minimumHeight"><number>44</number></property>
+         <property name="checkable"><bool>true</bool></property>
+         <property name="checked"><bool>true</bool></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_navsessions">
+         <property name="text"><string>📂</string></property>
+         <property name="toolTip"><string>Sessions</string></property>
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+         <property name="minimumHeight"><number>44</number></property>
+         <property name="checkable"><bool>true</bool></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_navsettings">
+         <property name="text"><string>⚙</string></property>
+         <property name="toolTip"><string>Settings</string></property>
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+         <property name="minimumHeight"><number>44</number></property>
+         <property name="checkable"><bool>true</bool></property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="sidebarFlexSpacer">
+         <property name="orientation"><enum>Qt::Vertical</enum></property>
+         <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_navlogout">
+         <property name="text"><string>⏻</string></property>
+         <property name="toolTip"><string>Log out</string></property>
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+         <property name="minimumHeight"><number>44</number></property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- Sessions slide-out panel — hidden by default, shown when btn_navsessions clicked -->
+    <item>
+     <widget class="QFrame" name="sessionsPanel">
+      <property name="minimumSize"><size><width>280</width><height>0</height></size></property>
+      <property name="maximumSize"><size><width>280</width><height>16777215</height></size></property>
+      <property name="visible"><bool>false</bool></property>
+      <layout class="QVBoxLayout" name="sessionsPanelLayout">
+       <property name="leftMargin"><number>14</number></property>
+       <property name="topMargin"><number>20</number></property>
+       <property name="rightMargin"><number>14</number></property>
+       <property name="bottomMargin"><number>20</number></property>
+       <property name="spacing"><number>14</number></property>
+
+       <item>
+        <widget class="QLabel" name="lblSessionsHeader">
+         <property name="text"><string>Sessions</string></property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="btn_newchatpanel">
+         <property name="text"><string>+ New chat</string></property>
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+         <property name="minimumHeight"><number>40</number></property>
+         <property name="property" stdset="0"><string notr="true">primary</string></property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QScrollArea" name="sessionsScroll">
+         <property name="widgetResizable"><bool>true</bool></property>
+         <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+         <property name="horizontalScrollBarPolicy"><enum>Qt::ScrollBarAlwaysOff</enum></property>
+         <widget class="QWidget" name="sessionsScrollContents">
+          <property name="geometry"><rect><x>0</x><y>0</y><width>252</width><height>600</height></rect></property>
+          <layout class="QVBoxLayout" name="obj_sessionslayout">
+           <property name="leftMargin"><number>0</number></property>
+           <property name="topMargin"><number>0</number></property>
+           <property name="rightMargin"><number>0</number></property>
+           <property name="bottomMargin"><number>0</number></property>
+           <property name="spacing"><number>4</number></property>
+           <item>
+            <spacer name="sessionsListSpacer">
+             <property name="orientation"><enum>Qt::Vertical</enum></property>
+             <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- Main page stack -->
+    <item>
+     <widget class="QStackedWidget" name="obj_pages">
+      <property name="currentIndex"><number>0</number></property>
+      <widget class="QWidget" name="chatPageHost">
+       <layout class="QVBoxLayout" name="chatPageHostLayout">
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="settingsPageHost">
+       <layout class="QVBoxLayout" name="settingsPageHostLayout">
+        <property name="leftMargin"><number>0</number></property>
+        <property name="topMargin"><number>0</number></property>
+        <property name="rightMargin"><number>0</number></property>
+        <property name="bottomMargin"><number>0</number></property>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

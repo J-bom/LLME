@@ -1,0 +1,11 @@
+{
+    "fetch": {
+        "command": "python",
+        "args": ["-m", "mcp_server_fetch"]
+    },
+    "windows": {
+        "command": "uvx.exe",
+        "args": ["windows-mcp", "serve"]
+    }
+    
+}
