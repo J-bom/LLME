@@ -12,7 +12,7 @@
 
 LLME is the serving and interface half of a two-part project. It loads and runs language models and gives users a private, secured chat experience over the network. It can serve three different kinds of model behind one interface:
 
-- **AlterEgo** - a 373M-parameter transformer I trained from scratch ([code](https://github.com/J-bom/AlterEgo) · [weights](https://huggingface.co/J-bom/AlterEgo))
+- **AlterEgo** - a 373M-parameter transformer I trained from scratch ([code](https://github.com/J-bom/AlterEgo) · [weights](https://huggingface.co/jbomdev/AlterEgo))
 - **GGUF models** via a `llama.cpp` backend (drop a model in and load it, like LM Studio)
 - **Google Gemini** via API, for a long-context (up to 1M tokens) hosted option
 
